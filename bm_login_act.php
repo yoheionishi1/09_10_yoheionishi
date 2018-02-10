@@ -11,7 +11,7 @@ $pdo=db_con();
 //２．データ登録SQL作成
 $lid = $_POST["lid"];
 $lpw = $_POST["lpw"];
-$stmt = $pdo->prepare("SELECT * FROM gs_user_table WHERE lid=:lid AND lpw=:lpw AND life_flg=0");
+$stmt = $pdo->prepare("SELECT * FROM gs_user_table WHERE lid=:lid AND lpw=:lpw");
 $stmt->bindValue(':lid',$lid, PDO::PARAM_STR);
 $stmt->bindValue(':lpw',$lpw, PDO::PARAM_STR);
 $res = $stmt->execute();
